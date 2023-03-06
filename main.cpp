@@ -79,5 +79,10 @@ int main(int argc, char const * argv[]) {
     show(freq<char>(std::vector<char>(h5.cbegin(), h5.cend())));
     std::cout.put('\n');
 
-    return 0;
+    h5.erase(std::remove_if(h5.begin(), h5.end(), [](auto cv) { return !std::isalpha(cv); }),
+             h5.end());
+    show(freq<char>(std::vector<char>(h5.cbegin(), h5.cend())));
+    std::cout.put('\n');
+
+  return 0;
 }
