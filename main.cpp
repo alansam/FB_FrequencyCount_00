@@ -97,22 +97,26 @@ int main(int argc, char const * argv[]) {
 
   show(freq<char>(std::vector<char>(phrase.begin(), phrase.end())));
   std::cout.put('\n');
-    
+
+    std::cout << "Henry V, Prologue. Letter Frequencies\n";
   show(freq<char>(std::vector<char>(h5.cbegin(), h5.cend())));
   std::cout.put('\n');
 
   std::cout << std::string(80, '`') << '\n';
+  std::cout << " Ignore case\n";
   std::transform(h5.begin(), h5.end(), h5.begin(), [](auto cc) { return std::tolower(cc); });
   show(freq<char>(std::vector<char>(h5.cbegin(), h5.cend())));
   std::cout.put('\n');
 
   std::cout << std::string(80, '-') << '\n';
+  std::cout << " Remove non-alphabetic chars.\n";
   h5.erase(std::remove_if(h5.begin(), h5.end(), [](auto cv) { return !std::isalpha(cv); }),
            h5.end());
   show(freq<char>(std::vector<char>(h5.cbegin(), h5.cend())));
   std::cout.put('\n');
 
   std::cout << std::string(80, '~') << '\n';
+  std::cout << " Show letter frequencies in descending order\n";
 
   auto show_mm = [](auto const & nc) {
     for (auto const & mm : nc) {
