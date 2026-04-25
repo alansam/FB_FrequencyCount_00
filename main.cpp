@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2023-2026 Alan Sampson
+ */
 
 #include <iostream>
 #include <iomanip>

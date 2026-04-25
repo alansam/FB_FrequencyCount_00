@@ -1,3 +1,5 @@
+# Copyright © 2023-2026 Alan Sampson
+
 all: main
 
 bindir=./bin
